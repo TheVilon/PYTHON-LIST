@@ -1,39 +1,14 @@
-'''
-Faça um programa para a leitura de duas notas parciais de um aluno. O programa deve calcular a média 
-alcançada por aluno e apresentar:
+"""
+Faça um programa que pergunte o preço de três produtos e informe qual produto você 
+deve comprar, sabendo que a decisão é sempre pelo mais barato:
+"""
+produto1= float(input("Digite o preço do primeiro produto: "))
+produto2= float(input("Digite o preço do segundo produto: "))
+produto3= float(input("Digite o preço do terceiro produto: "))
 
-A mensagem "Aprovado", se a média alcançada for maior ou igual a sete;
-A mensagem "Reprovado", se a média for menor do que sete;
-A mensagem "Aprovado com Distinção", se a média for igual a dez.
-'''
-# Validação da Nota 1
-while True:
-    try:
-        nota1 = float(input("Digite a nota da primeira avaliação: "))
-        if 0 <= nota1 <= 10:
-            break  # Nota válida! Sai do loop.
-        print("Digite o valor de nota válida (entre 0 e 10).")
-    except ValueError:
-        print("Erro! Use apenas números e use PONTO em vez de vírgula (Ex: 7.5).")
-
-# Validação da Nota 2
-while True:
-    try:
-        nota2 = float(input("Digite a nota da segunda avaliação: "))
-        if 0 <= nota2 <= 10:
-            break  # Nota válida! Sai do loop.
-        print("Digite o valor de nota válida (entre 0 e 10).")
-    except ValueError:
-        print("Erro! Use apenas números e use PONTO em vez de vírgula (Ex: 7.5).")
-
-# Cálculo da Média
-media = (nota1 + nota2) / 2
-print(f"\nMédia: {media:.1f}")
-
-# Verificação do Resultado
-if media == 10:
-    print("Aprovado com distinção")
-elif 7.0 <= media < 10:
-    print("Aprovado")
+if produto1 < produto2 and produto1 < produto3:
+    print("Você deve comprar o primeiro produto, que custa R$", produto1)
+elif produto2 < produto1 and produto2 < produto3:
+    print("Você deve comprar o segundo produto, que custa R$", produto2)
 else:
-    print("Reprovado")
+    print("Você deve comprar o terceiro produto, que custa R$", produto3)
